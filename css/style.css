@@ -91,26 +91,76 @@ a{
 .gnb{
 	display: flex;
 	justify-content: center;
-	background-color: var(--primary-color);
+	background-color: var(--sub-color);
 	height: 1.8rem;
 }
-/* ========================= Section > mainChart ==================================  */
-.main-slogun{
-	/* background-image: url("../imgs/main-back.jpg"); */
+/* ========================= Auto Banner ==================================  */
+#visual {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+  max-width: 100%;
+  height: 800px;
+  margin: 0 auto;
+  overflow: hidden;           
+  /* box-shadow: 1px 5px 10px 2px #666; */
+  text-align: center;
+  font-size: 1.2rem;
+
+}      
+#visual>div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease;
+  opacity: 0;
+ /*  margin-left: 20rem;
+  flex:1; */
+}
+#visual div:nth-child(1){
 	background-color: var(--primary-color);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: cover;
-	height: 800px;
-	max-width: 100%;
-	display:flex;
-	align-items: center;
-	justify-content: space-around;
 }
-.main-slogun img{
-	margin-left: 10rem;
-	flex:1;
+#visual div:nth-child(2){
+	background-color: #93C2E0;
+  	display: flex;
+  	justify-content: center;
+  	padding-top: 5rem;
+ 	overflow: hidden; 
 }
+#visual div:nth-child(3){
+	background-color: #DBDFF7;
+	display: flex;
+  	justify-content: center;
+  	padding-top: 5rem;
+ 	overflow: hidden; 
+}
+#visual>div.on{
+  opacity: 1;
+}
+#control { 
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  text-align: center;         
+}
+#control a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #f6f5f5;                       
+  line-height: 26px;
+  font-size: 0.8em;
+  border-radius: 14px;
+  margin: 0 2px
+}
+
+#control a.on {
+  background: #9ab3f5;
+}
+/* ========================= Section > mainChart ==================================  */
 .title{
 	color : var(--base-text-dark);
 	margin-top: 3rem;
@@ -188,15 +238,16 @@ chart-album img{
 	 text-align: center;
 	 
 }
-
-
-/* ========================= Section > main-favorite > play-section ==================================  */
-.play-section{
-	background-color: var(--sub-color);
-	display: flex;
-	justify-content: center;
-	height: 500px;
+#table td{
+	text-align: center;
 }
+#table img{
+	width: 75px;
+	height: 75px;
+	text-align: center;
+}
+/* ========================= Section > main-favorite > play-section ==================================  */
+
 /* ========================= Section > main-newAlbum > new-list ==================================  */
 .main-newAlbum{
 	margin-bottom: 3rem;	
@@ -221,5 +272,7 @@ footer{
 .guide-links li{
 	display: inline-block;
 	font-size: .825rem;
+	color: black;
 }
+
 

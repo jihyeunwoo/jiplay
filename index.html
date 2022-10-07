@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>JIPLAY : 음악을 공유하는 공간, 지플레이 </title>
 		<link href="imgs/favicon.png" rel="shortcut icon">
+		<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
@@ -16,30 +20,32 @@
 					
 		</header>
 		<nav class="pos-sticky">
-				<ul class="gnb ">
-					<li><a href="#">LOGIN</a></li>
-					<li><a href="#">JOIN</a></li>
-					<li><a href="#">INFO</a></li>
-					<li><a href="#">MUSIC</a></li>
-					<li><a href="#">EVENTS</a></li>
-					<li><a href="#">NOTICE</a></li>
-				</ul>
-			</nav>	
-			<div class="main-slogun">
-				<div class="main-left">
-					<img src="imgs/main-slogun.png" alt="" />
-				</div>
-				<div class="main-right">
-					<h2>지플레이, 우리들만의 노래 공간</h2>
-					<p> 직접 만든 노래의 객원 보컬을 구하고 작사/작곡 사고파는 플랫폼.</p>
-					<a href="#"><span class="material-symbols-outlined">
-							add_circle
-						</span>go to info</a>
-		
-				</div>
-			</div>
+			<ul class="gnb">
+				<li><a href="docs/login.html">LOGIN</a></li>
+				<li><a href="docs/join.html">JOIN</a></li>
+				<li><a href="docs/info.html">INFO</a></li>
+				<li><a href="docs/music.html">MUSIC</a></li>
+				<li><a href="docs/events.html">EVENTS</a></li>
+				<li><a href="docs/notice.html">NOTICE</a></li>
+			</ul>
+		</nav>
+		<div id="visual">     
+             <div class="on"><a href="#"><img src="imgs/main-slogun.png" alt="1"></a>
+             	<h3>우리들만의 음악공간</h3>
+             	<p>작곡, 작사, 객원보컬, 가이드, 버스킹 등 모든 걸 가능케 합니다. <br /> <strong>서로 모여 음악적 재능을 공유하는 플랫폼.</strong></p>
+             </div>
+             <div><a href="#"><img src="imgs/slogun.png" alt="2"></a>
+             </div>
+             <div><a href="#"><img src="imgs/slogun1.png" alt="3"></a>
+             </div>     
+        	<section id="control">
+            	<a class="on" href="#"></a>
+            	<a href="#"></a>
+            	<a href="#"></a>
+        	</section>
+        </div>		
 		<section>
-			<h2 class="d-none">지플레이차트, 요즘 뜨는 곡, 신곡</h2>
+			<h2 class="d-none">지플레이차트, 가수, 노래</h2>
 			<article class="main-chart">
 				<div class="container">
 					<h3 class="title">지플레이가 키운 스타</h3>
@@ -84,7 +90,7 @@
 				<div class="music-wrap">
 					<table id="table">
 					<tr>
-						<th>제목</th><th>저자</th><th>원하는 사항</th><th>노래샘플</th>
+						<th>앨범커버</th><th>제목</th><th>저자</th><th>원하는 사항</th><th>노래샘플</th>
 					</tr>
 					</table>
 					<script>
@@ -101,23 +107,38 @@
 					xhttp.send();
 					
 					function jsonfunc( jsonText ) {
+						let arrAlbum = new Array();
 						let arrTitle = new Array();
 						let arrAuthor = new Array();
 						let arrContent = new Array();
 						let arrMusic = new Array();
 						
 						let json = JSON.parse(jsonText);
+						console.log(json);
 					
 						for(i=0; i<json.length; i++){ // 값 전체 가져오는법
+							arrAlbum[i] = json[i].album;
 							arrTitle[i] = json[i].title;
 							arrAuthor[i] = json[i].author;
 							arrContent[i] = json[i].content;
-							arrMusic[i] = json[i].music;
+							arrMusic[i] = json[i].music;							
 						}
+						console.log("마지막 arrAlbum : "+arrAlbum)
 						let table = document.getElementById('table');
 						
 						for(i=0; i<arrTitle.length; i++){
+								
 							let tr = document.createElement("tr");
+							
+							
+						 	/* let imgs = td0.appendChild("img")
+							imgs.setAttribute("src","imgs/"+arrAlbum[i]); */
+							
+							let td0 = document.createElement("td");	
+							let imgs = document.createElement("img");
+							imgs.setAttribute("src","imgs/"+arrAlbum[i]);
+							td0.appendChild(imgs);
+							
 							let td1 = document.createElement("td");			  
 							td1.appendChild(document.createTextNode(arrTitle[i] + ""));
 							
@@ -131,10 +152,12 @@
 							let audio = document.createElement("audio");
 							audio.setAttribute("src","music/"+arrMusic[i]);
 							audio.setAttribute("controls","controls");
+							td4.appendChild(audio);				
+							
+							tr.appendChild(td0);
 							tr.appendChild(td1);
 							tr.appendChild(td2);
 							tr.appendChild(td3);
-							tr.appendChild(audio);
 							tr.appendChild(td4);
 							
 							table.appendChild(tr);
@@ -144,7 +167,8 @@
 				</div>
 			</article>
 			<article class="main-newAlbum">
-				
+				<h3 class="title">지플레이 조회수 BEST 5</h3>
+				<p class="sub-title">10월 첫째주</p>	
 			</article>
 		</section>
 		<aside>
@@ -166,5 +190,6 @@
 				</div>
 			</div>
 		</footer>
+		<script src ="script/main.js"></script>
 	</body>
 </html>

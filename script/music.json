@@ -1,34 +1,34 @@
 [
 	{
-		"album":"",
+		"album":"iu-album.jpg",
 		"title":"COIN",
 		"author":"아이유(IU)",
 		"content":"보컬 구함",
 		"music":"IU-Coin.mp3"
 	},
 	{
-		"album":"",
+		"album":"crush-album.jpg",
 		"title":"RUSH HOUR",
 		"author":"크러쉬(CRUSH)",
 		"content":"작사 구함",	
 		"music":"Crush-RushHour.mp3"
 	},
 	{
-		"album":"",
+		"album":"seonghwan-album.jpg",
 		"title":"언제라도 어디서라도",
 		"author":"정승환",
 		"content":"편곡/보컬 구함",
 		"music":"JungSeungHwan-Whenever Wherever.mp3"
 	},
 	{
-		"album":"",
+		"album":"newjeans-album.jpg",
 		"title":"쿠키(COOKIE)",
 		"author":"뉴진스(NEWJEANS)",
 		"content":"녹음실 및 프로듀서 구함",
 		"music":"NewJeans-Cookie.mp3"	
 	},
 	{
-		"album":"",
+		"album":"zion-album.jpg",
 		"title":"회전목마",
 		"author":"자이언티(ZION-T)",
 		"content":"래퍼 구함",
