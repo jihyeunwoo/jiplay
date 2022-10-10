@@ -16,11 +16,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
 :root {
 	--base-text-dark: black; 
 	--base-text-light: #fff; 
 	--sub-text-color: #C5D2E3; 
-	--primary-color: #94DC74; 
+	--primary-color: #94DC74;
 	--sub-color: #4C5A46;
 }
 
@@ -79,7 +80,7 @@ a {
 	position: sticky;
 	padding-top: 0px;
 	top: 0px;
-	z-index: 999;
+	z-index: 1;
 }
 
 .material-symbols-outlined {
@@ -183,7 +184,7 @@ a {
 }
 
 .sub-title {
-	color: var(- -sub-color);
+	color: var(--sub-color);
 	margin-bottom: 3rem;
 }
 
@@ -213,7 +214,6 @@ a {
 
 .char-list .overlay {
 	background-color: rgba(0, 0, 0, .7);
-	color: var(--base-text-light);
 	width: 100%;
 	height: 100%;
 }
@@ -223,22 +223,9 @@ a {
 	top: 40%;
 	left: 40%;
 	font-size: 1.3rem;
-}
-
-chart-album img {
-	width: 700px;
-}
-
-.chart-album .overlay {
-	background-color: rgba(0, 0, 0, .7);
 	color: var(--base-text-light);
-	width: 100%;
-	height: 100%;
 }
 
-.chart-album li:hover .overlay {
-	display: flex;
-}
 
 .overlay {
 	display: none;
@@ -249,12 +236,9 @@ chart-album img {
 
 .overlay p {
 	text-align: center;
+	color: #fff;
 }
 
-.chart-album {
-	display: flex;
-	flex-wrap: wrap;
-}
 
 /* ========================= Section > music-list ==================================  */
 .music-wrap {
@@ -276,6 +260,37 @@ chart-album img {
 	width: 75px;
 	height: 75px;
 	text-align: center;
+}
+/* ========================= Section > music-list - popUp ==================================  */
+#popup01 {
+	display: none;
+}
+
+#popup01 {
+	width: 480px;
+	height: 100px;
+	position: absolute;
+	top: 225%;
+	margin: 0 auto;
+	left: 40%;
+	/* margin: -250px 0 0 -250px; */
+	background-color: #fff;
+	z-index: 3;
+	text-align: center;
+}
+
+.backon {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: #00000054;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2; 
+}
+.openPopup {
+	cursor: pointer;
 }
 /* ========================= Section > main-favorite > play-section ==================================  */
 
@@ -322,18 +337,20 @@ footer a {
 
 /* ===================================================================  */
 /* ========================= Login ==================================  */
-.login{
+.login {
 	margin-top: 5rem;
 }
-.login h3{
+
+.login h2 {
 	margin-top: 2rem;
 	text-align: center;
 }
-.login .container{
-	margin-top: 2rem;
-	width:30%;
 
+.login .container {
+	margin-top: 2rem;
+	width: 30%;
 }
+
 form {
 	padding: 10px;
 }
@@ -391,106 +408,127 @@ input[type=submit] {
 	margin-top: 100px;
 }
 
-#forgot {
+.login-sub {
 	text-align: right;
 	font-size: 12pt;
 	color: rgb(164, 164, 164);
 	margin: 10px 0px;
 }
+
 /* ===================================================================  */
-/* ========================= Join ==================================  */
+/* ========================= Join.html ==================================  */
 .joinForm {
-  padding: 30px, 20px;
-  background-color:#ffffff;
-  text-align:center;
-  border-radius: 15px;
+	padding: 30px 20px;
+	background-color: #ffffff;
+	text-align: center;
+	border-radius: 15px;
 }
-.joinForm input::placeholder{
-	color:black;
+
+.joinForm input::placeholder {
+	color: black;
 }
 
 .joinForm h2 {
-  text-align: center;
-  margin: 30px;
+	text-align: center;
+	margin: 30px;
 }
 
 .textForm {
-  border-bottom: 2px solid #adadad;
-  margin: 30px;
-  padding: 10px 10px;
+	border-bottom: 2px solid #adadad;
+	margin: 30px;
+	padding: 10px 10px;
 }
+
 .id {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
 .pw {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
 .name {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
 .email {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
 .nickname {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
-.cellphoneNo {
-  width: 100%;
-  border:none;
-  outline:none;
-  color: #636e72;
-  font-size:16px;
-  height:25px;
-  background: none;
+.phoneNo {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
 }
 
 .btn {
-  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
-  background-position: left;
-  background-size: 200%;
-  color:white;
-  font-weight: bold;
-  border:none;
-  cursor:pointer;
-  transition: 0.4s;
-  display:inline;
+	background: var(--sub-color);;
+	color: white;
+	font-weight: bold;
+}
+
+.raidoForm {
+	padding: 3rem;
+}
+
+.radioForm p {
+	display: inline-block;
+	margin-right: 3rem;
 }
 
 .btn:hover {
-  background-position: right;
+	background-position: right;
 }
+
+/* ===================================================================  */
+/* ========================= event.html ==================================  */
+.event-img1{
+	width: 100%;
+	background-color: #93C2E0;
+	text-align: center;
+}
+.event-img2{
+	width: 100%;
+	background-color: #DBDFF7;
+	text-align: center;
+}
+/* ===================================================================  */
+/* ========================= music.html ==================================  */

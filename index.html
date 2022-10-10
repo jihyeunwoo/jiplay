@@ -9,14 +9,14 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
 		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+		<link rel="stylesheet" href="css/style.css" >
 	</head>
 	<body id="top">
 		<h1 class="d-none">JIPLAY : 음악을 공유하는  공간, 지플레이</h1>
 		
 		<header class="main-header ">
-			<a href="#"> <img src="imgs/jiplay-logo-size.png" alt="jiplay logo" /></a>
+			<a href="#"> <img src="imgs/jiplay-logo-size.png" alt="jiplay logo"></a>
 					
 		</header>
 		<nav class="pos-sticky">
@@ -32,7 +32,7 @@
 		<div id="visual">     
              <div class="on"><a href="#"><img src="imgs/main-slogun.png" alt="1"></a>
              	<h3>우리들만의 음악공간</h3>
-             	<p>작곡, 작사, 객원보컬, 가이드, 버스킹 등 모든 걸 가능케 합니다. <br /> <strong>서로 모여 음악적 재능을 공유하는 플랫폼.</strong></p>
+             	<p>작곡, 작사, 객원보컬, 가이드, 버스킹 등 모든 걸 가능케 합니다. <br> <strong>서로 모여 음악적 재능을 공유하는 플랫폼.</strong></p>
              </div>
              <div><a href="#"><img src="imgs/slogun.png" alt="2"></a>
              </div>
@@ -53,33 +53,33 @@
 					<ul class="char-list">
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">싱어송라이터 <br />  아이유</p>
-							</div> <img src="imgs/iu.jpg" alt="아이유" />
+								<p class="over-title">싱어송라이터 <br>  아이유</p>
+							</div> <img src="imgs/iu.jpg" alt="아이유" >
 						</li>
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">보컬 <br />정승환</p>
-							</div><img src="imgs/seonghwan.jpg" alt="정승환" />
+								<p class="over-title">보컬 <br>정승환</p>
+							</div><img src="imgs/seonghwan.jpg" alt="정승환">
 						</li>
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">보컬 <br />존박</p>
-							</div><img src="imgs/johnPark.jpg" alt="존박" />
+								<p class="over-title">보컬 <br>존박</p>
+							</div><img src="imgs/johnPark.jpg" alt="존박">
 						</li>
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">싱어송라이터 <br />  자이언티</p>
-							</div><img src="imgs/zion-t.jpg" alt="자이언티" />
+								<p class="over-title">싱어송라이터 <br>  자이언티</p>
+							</div><img src="imgs/zion-t.jpg" alt="자이언티">
 						</li>
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">래퍼 <br />이영지</p>
-							</div><img src="imgs/youngji.jpg" alt="이영지" />
+								<p class="over-title">래퍼 <br>이영지</p>
+							</div><img src="imgs/youngji.jpg" alt="이영지">
 						</li>
 						<li class="pos-relative">
 							<div class="overlay pos-absolute">
-								<p class="over-title">작곡가 <br />이영수</p>
-							</div><img src="imgs/writer-youngsu.jpg" alt="이영수" />
+								<p class="over-title">작곡가 <br>이영수</p>
+							</div><img src="imgs/writer-youngsu.jpg" alt="이영수">
 						</li>
 					</ul>
 				</div>
@@ -90,7 +90,7 @@
 				<div class="music-wrap">
 					<table id="table">
 					<tr>
-						<th>앨범커버</th><th>제목</th><th>저자</th><th>원하는 사항</th><th>노래샘플</th>
+						<th>앨범커버</th><th>제목</th><th>저자</th><th>원하는 사항</th><th>노래샘플</th><th>지원하기</th>
 					</tr>
 					</table>
 					<script>
@@ -130,10 +130,6 @@
 								
 							let tr = document.createElement("tr");
 							
-							
-						 	/* let imgs = td0.appendChild("img")
-							imgs.setAttribute("src","imgs/"+arrAlbum[i]); */
-							
 							let td0 = document.createElement("td");	
 							let imgs = document.createElement("img");
 							imgs.setAttribute("src","imgs/"+arrAlbum[i]);
@@ -150,6 +146,13 @@
 							
 							let td4 = document.createElement("td");			 
 							let audio = document.createElement("audio");
+							
+							let td5 = document.createElement("td");
+							let div = document.createElement("div");
+							div.setAttribute("class","openPopup");
+							div.appendChild(document.createTextNode("지원"));
+							td5.appendChild(div);
+							
 							audio.setAttribute("src","music/"+arrMusic[i]);
 							audio.setAttribute("controls","controls");
 							td4.appendChild(audio);				
@@ -159,17 +162,59 @@
 							tr.appendChild(td2);
 							tr.appendChild(td3);
 							tr.appendChild(td4);
+							tr.appendChild(td5);
 							
 							table.appendChild(tr);
 						}
 					}
 					</script>
 				</div>
+				<div id="popup01">
+    				<div>
+						<h2>지원 후 24시간 이내에만 취소가 가능합니다.</h2>
+						<button class="btn-apply">지원</button>
+						<button class="close">취소</button>
+					</div>
+				</div>
 			</article>
-			<article class="main-newAlbum">
-				<h3 class="title">지플레이 조회수 BEST 5</h3>
-				<p class="sub-title">10월 첫째주</p>	
-			</article>
+		<!-- 	<article class="main-newAlbum">
+				<div class="container">
+					<h3 class="title">지플레이  BEST 6</h3>
+					<p class="sub-title">10월 첫째주</p>
+					<ul class="char-list">
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">싱어송라이터 <br>  아이유</p>
+							</div> <img src="imgs/iu.jpg" alt="아이유" >
+						</li>
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">보컬 <br>정승환</p>
+							</div><img src="imgs/seonghwan.jpg" alt="정승환">
+						</li>
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">보컬 <br>존박</p>
+							</div><img src="imgs/johnPark.jpg" alt="존박">
+						</li>
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">싱어송라이터 <br>  자이언티</p>
+							</div><img src="imgs/zion-t.jpg" alt="자이언티">
+						</li>
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">래퍼 <br>이영지</p>
+							</div><img src="imgs/youngji.jpg" alt="이영지">
+						</li>
+						<li class="pos-relative">
+							<div class="overlay pos-absolute">
+								<p class="over-title">작곡가 <br>이영수</p>
+							</div><img src="imgs/writer-youngsu.jpg" alt="이영수">
+						</li>
+					</ul>	
+				</div>
+			</article> -->
 		</section>
 		<aside>
 			<div class="container">
@@ -179,7 +224,7 @@
 		<footer>
 			<div class="container">
 				<div class="footer-guide">
-					<hr />
+					<hr>
 					<h2>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용(미니프로젝트)으로 제작되었습니다.</h2>
 					<ul class="guide-links">
 						<li><a href="#">이용약관</a></li>
@@ -189,7 +234,7 @@
 					</ul>
 					<p>&copy;<strong class="owner">2022.JIPLAY&trade;</strong>. all rights reserved.</p>
 					<div class="logo-bottom">
-						<a href="#"> <img src="imgs/jiplay-logo-size.png" alt="지플레이" />
+						<a href="#"> <img src="imgs/jiplay-logo-size.png" alt="지플레이">
 						</a>
 					</div>
 				</div>
