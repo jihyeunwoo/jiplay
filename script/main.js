@@ -21,9 +21,10 @@ $(function() {
 	}
 
 		$(".openPopup").on("click", function() {
-			$("#popup01").show();
-			$("body").append("<div class=\"backon\"></div>");
-			$(".backon").show();
+			$("#popup01").show(400, function(){
+				$(".backon").removeClass("d-none");
+				$(".backon").show();
+			});
 		});
 		$(".btn-apply").on("click", function() {
 			alert("지원 완료");

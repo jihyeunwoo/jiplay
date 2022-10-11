@@ -5,10 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>JIPLAY : 음악을 공유하는 공간, 지플레이 </title>
 		<link href="imgs/favicon.png" rel="shortcut icon">
-		<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="script/jquery-3.6.1.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 		<link rel="stylesheet" href="css/style.css" >
 	</head>
@@ -95,78 +92,78 @@
 					</table>
 					<script>
 					
-					let xhttp = new XMLHttpRequest();
-					
-					xhttp.onreadystatechange = function () {
-					
-						if(xhttp.readyState == 4 && xhttp.status == 200){
-							jsonfunc(this.responseText); 
-						}
-					}
-					xhttp.open("GET","script/music.json", true);
-					xhttp.send();
-					
-					function jsonfunc( jsonText ) {
-						let arrAlbum = new Array();
-						let arrTitle = new Array();
-						let arrAuthor = new Array();
-						let arrContent = new Array();
-						let arrMusic = new Array();
+						let xhttp = new XMLHttpRequest();
 						
-						let json = JSON.parse(jsonText);
-						console.log(json);
-					
-						for(i=0; i<json.length; i++){ // 값 전체 가져오는법
-							arrAlbum[i] = json[i].album;
-							arrTitle[i] = json[i].title;
-							arrAuthor[i] = json[i].author;
-							arrContent[i] = json[i].content;
-							arrMusic[i] = json[i].music;							
-						}
-						console.log("마지막 arrAlbum : "+arrAlbum)
-						let table = document.getElementById('table');
+						xhttp.onreadystatechange = function () {
 						
-						for(i=0; i<arrTitle.length; i++){
+							if(xhttp.readyState == 4 && xhttp.status == 200){
+								jsonfunc(this.responseText); 
+							}
+						}
+						xhttp.open("GET","script/music.json", true);
+						xhttp.send();
+						
+						function jsonfunc( jsonText ) {
+							let arrAlbum = new Array();
+							let arrTitle = new Array();
+							let arrAuthor = new Array();
+							let arrContent = new Array();
+							let arrMusic = new Array();
+							
+							let json = JSON.parse(jsonText);
+							/* console.log(json); */
+						
+							for(i=0; i<json.length; i++){ // 값 전체 가져오는법
+								arrAlbum[i] = json[i].album;
+								arrTitle[i] = json[i].title;
+								arrAuthor[i] = json[i].author;
+								arrContent[i] = json[i].content;
+								arrMusic[i] = json[i].music;							
+							}
+							/* console.log("마지막 arrAlbum : "+arrAlbum) */
+							let table = document.getElementById('table');
+							
+							for(i=0; i<arrTitle.length; i++){
+									
+								let tr = document.createElement("tr");
 								
-							let tr = document.createElement("tr");
-							
-							let td0 = document.createElement("td");	
-							let imgs = document.createElement("img");
-							imgs.setAttribute("src","imgs/"+arrAlbum[i]);
-							td0.appendChild(imgs);
-							
-							let td1 = document.createElement("td");			  
-							td1.appendChild(document.createTextNode(arrTitle[i] + ""));
-							
-							let td2 = document.createElement("td");			 
-							td2.appendChild(document.createTextNode(arrAuthor[i] + ""));
-							
-							let td3 = document.createElement("td");			 
-							td3.appendChild(document.createTextNode(arrContent[i]+ ""));
-							
-							let td4 = document.createElement("td");			 
-							let audio = document.createElement("audio");
-							
-							let td5 = document.createElement("td");
-							let div = document.createElement("div");
-							div.setAttribute("class","openPopup");
-							div.appendChild(document.createTextNode("지원"));
-							td5.appendChild(div);
-							
-							audio.setAttribute("src","music/"+arrMusic[i]);
-							audio.setAttribute("controls","controls");
-							td4.appendChild(audio);				
-							
-							tr.appendChild(td0);
-							tr.appendChild(td1);
-							tr.appendChild(td2);
-							tr.appendChild(td3);
-							tr.appendChild(td4);
-							tr.appendChild(td5);
-							
-							table.appendChild(tr);
+								let td0 = document.createElement("td");	
+								let imgs = document.createElement("img");
+								imgs.setAttribute("src","imgs/"+arrAlbum[i]);
+								td0.appendChild(imgs);
+								
+								let td1 = document.createElement("td");			  
+								td1.appendChild(document.createTextNode(arrTitle[i] + ""));
+								
+								let td2 = document.createElement("td");			 
+								td2.appendChild(document.createTextNode(arrAuthor[i] + ""));
+								
+								let td3 = document.createElement("td");			 
+								td3.appendChild(document.createTextNode(arrContent[i]+ ""));
+								
+								let td4 = document.createElement("td");			 
+								let audio = document.createElement("audio");
+								
+								let td5 = document.createElement("td");
+								let div = document.createElement("div");
+								div.setAttribute("class","openPopup");
+								div.appendChild(document.createTextNode("지원"));
+								td5.appendChild(div);
+								
+								audio.setAttribute("src","music/"+arrMusic[i]);
+								audio.setAttribute("controls","controls");
+								td4.appendChild(audio);				
+								
+								tr.appendChild(td0);
+								tr.appendChild(td1);
+								tr.appendChild(td2);
+								tr.appendChild(td3);
+								tr.appendChild(td4);
+								tr.appendChild(td5);
+								
+								table.appendChild(tr);
+							}
 						}
-					}
 					</script>
 				</div>
 				<div id="popup01">
@@ -240,6 +237,7 @@
 				</div>
 			</div>
 		</footer>
+		<div class= "backon d-none"></div>
 		<script src ="script/main.js"></script>
 	</body>
 </html>
