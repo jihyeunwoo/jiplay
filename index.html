@@ -111,7 +111,6 @@
 							let arrMusic = new Array();
 							
 							let json = JSON.parse(jsonText);
-							/* console.log(json); */
 						
 							for(i=0; i<json.length; i++){ // 값 전체 가져오는법
 								arrAlbum[i] = json[i].album;
@@ -120,7 +119,6 @@
 								arrContent[i] = json[i].content;
 								arrMusic[i] = json[i].music;							
 							}
-							/* console.log("마지막 arrAlbum : "+arrAlbum) */
 							let table = document.getElementById('table');
 							
 							for(i=0; i<arrTitle.length; i++){
@@ -145,7 +143,7 @@
 								let audio = document.createElement("audio");
 								
 								let td5 = document.createElement("td");
-								let div = document.createElement("div");
+								let div = document.createElement("p");
 								div.setAttribute("class","openPopup");
 								div.appendChild(document.createTextNode("지원"));
 								td5.appendChild(div);

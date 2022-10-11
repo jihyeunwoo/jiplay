@@ -20,7 +20,7 @@ $(function() {
 		srt++;
 	}
 
-		$(".openPopup").on("click", function() {
+		$(document).on("click",".openPopup", function() {
 			$("#popup01").show(400, function(){
 				$(".backon").removeClass("d-none");
 				$(".backon").show();
