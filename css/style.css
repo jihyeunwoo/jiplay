@@ -112,6 +112,7 @@ a {
 .carousel-item{
 	text-align: center;
 	max-width: 100%;
+	height: 750px;
 }
 .carousel-item1{
 	background-color: var(--primary-color);
@@ -122,6 +123,11 @@ a {
 .carousel-item3{
 	background-color: #DBDFF7;
 }
+.carousel-item1 img, .carousel-item2 img, .carousel-item3 img{
+	margin-top: 5rem;
+}
+
+
 /* ========================= Section > mainChart ==================================  */
 .title {
 	color: var(--base-text-dark);
@@ -279,7 +285,7 @@ input:placeholder-shown+label {
 	top: 15px;
 }
 
-input:focus+label, label {
+input:focus+.login-label, .login-label {
 	color: #8aa1a1;
 	font-size: 10pt;
 	pointer-events: none;
@@ -398,7 +404,6 @@ input[type=submit] {
 	height: 25px;
 	background: none;
 }
-
 .btn {
 	background: var(--sub-color);;
 	color: white;
