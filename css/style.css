@@ -88,7 +88,7 @@ a {
 }
 /* ========================= MainHeader ===================================  */
 .main-header {
-	width: 100%;
+	width: 100vh;
 	height: 100px;
 	background-color: var(--sub-color);
 	text-align: center;
@@ -163,9 +163,12 @@ a {
 }
 
 #table img {
-	width: 75px;
-	height: 75px;
+	width: .7rem;
+	height: .7rem;
 	text-align: center;
+}
+audio{
+	width: 2rem;
 }
 /* ========================= Section > music-list - popUp ==================================  */
 #popup01 {
@@ -443,8 +446,4 @@ input[type=submit] {
     html {
         font-size: 0.5rem;
     }
-	form{
-		width: 100vw;
-	}
-
 }
